@@ -369,18 +369,6 @@
       font-size: 1.2rem;
     }
 
-    .fading-1 { opacity: 0.95; }
-    .fading-2 { opacity: 0.85; }
-    .fading-3 { opacity: 0.7;  }
-    .fading-4 { opacity: 0.55; }
-    .fading-5 { opacity: 0.4;  }
-    .fading-6 { opacity: 0.25; }
-    .fading-7 { opacity: 0.1;  }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
 
     @media (max-width: 768px) {
       .title { font-size: 2rem; }
@@ -433,7 +421,7 @@
   <div id="collection-screen" class="screen">
     <button class="btn back-btn" onclick="switchScreen('title-screen')">← back</button>
     <div class="collection-header">
-      <h2 class="collection-title">Cleared in 30 days</h2>
+      <h2 class="collection-title">Collection</h2>
     </div>
     <div id="messages-container" class="messages-container">
       <div class="empty-state">loading messages...</div>
@@ -606,13 +594,11 @@
       container.innerHTML = '<div class="empty-state">loading messages...</div>';
       try {
         const now = Date.now();
-        const oneMonthAgo = now - 30 * 24 * 60 * 60 * 1000;
 
-        const { data, error } = await db
-          .from('sessions')
-          .select('*')
-          .gt('timestamp', oneMonthAgo)
-          .order('timestamp', { ascending: false });
+const { data, error } = await db
+  .from('sessions')
+  .select('*')
+  .order('timestamp', { ascending: false });
 
         if (error) throw error;
 
@@ -630,8 +616,6 @@
         container.innerHTML = '';
         sessions.forEach((s, i) => container.appendChild(createSessionCard(s, i, sessions.length)));
 
-        // Clean up old sessions
-        await db.from('sessions').delete().lt('timestamp', oneMonthAgo);
 
       } catch (e) {
         console.error('loadMessages error:', e);
