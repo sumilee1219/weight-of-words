@@ -654,14 +654,14 @@ const { data, error } = await db
     function openSessionModal(session) {
       const num = session.writerNum ? String(session.writerNum).padStart(3, '0') : '???';
       document.getElementById('modal-prompt').innerHTML =
-        `<span style="font-family:'Maison Neue Mono',monospace;font-size:1.1rem;color:var(--white);">#${num}</span>`;
+        `<span style="font-family:'Maison Neue Mono',monospace;font-size:1.1rem;color:var(--blue);">#${num}</span>`;
 
       // Build full Q&A list in modal
       const entries = session.entries || [];
       let html = '';
       entries.forEach((e, i) => {
         html += `
-          <div style="padding:${i > 0 ? '14px' : '5px'} 0 5px 0;">
+          <div style="padding:${i > 0 ? '5px' : '5px'} 0 5px 0;">
             <div style="border:1px solid var(--border-color);padding:8px 12px;margin-bottom:10px;background:rgba(27,34,61,0.06);">
               <div style="font-size:0.68rem;color:#212B45;font-family:'Maison Neue Mono',monospace;letter-spacing:0.03em;margin-bottom:2px;">${escapeHtml(e.promptEn)}</div>
               <div style="font-family:'HsGultokki',sans-serif;font-size:0.85rem;color:#212B45;">${escapeHtml(e.promptKo)}</div>
