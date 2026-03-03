@@ -27,8 +27,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --white: #0D1333;
-      --blue: #FFFEFC;
+      --white: #FFFEFC;
+      --blue: #0D1333;
       --text-muted: #32395a;
       --border-color: #333333;
       --card-bg: #FFFEF2;
@@ -36,7 +36,7 @@
 
     body {
       font-family: 'Hydrophilia Liquid', sans-serif;
-      background: var(--white);
+      background: var(--blue);
       overflow-x: hidden;
       cursor: default;
     }
@@ -67,7 +67,7 @@
       font-family: "hydrophilia-liquid", sans-serif;
       font-weight: 400;
       font-size: 2.5rem;
-      color: var(--blue);
+      color: var(--white);
       text-align: center;
       padding: 0 20px;
       margin-bottom: 3rem;
@@ -77,8 +77,8 @@
       font-family: 'Hydrophilia Liquid', sans-serif;
       font-size: 1rem;
       padding: 15px 35px;
-      background: var(--blue);
-      color: var(--white);
+      background: var(--white);
+      color: var(--blue);
       border: none;
       cursor: pointer;
       transition: opacity 0.2s;
@@ -95,7 +95,7 @@
     }
 
     /* ── WRITE SCREEN ── */
-    #write-screen { background: var(--white); }
+    #write-screen { background: var(--blue); }
 
     .write-container {
       max-width: 600px;
@@ -115,7 +115,7 @@
     .prompt-label {
       font-family: 'HsGultokki', sans-serif;
       font-size: 1.3rem;
-      color: var(--blue);
+      color: var(--white);
       margin-bottom: 22px;
       line-height: 1.5;
       display: flex;
@@ -145,7 +145,7 @@
       outline: none;
       resize: vertical;
       margin-bottom: 12px;
-      color: var(--blue);
+      color: var(--white);
     }
     .message-input::placeholder { color: var(--text-muted); opacity: 0.8; }
     .message-input:focus { border-color: #555; }
@@ -174,7 +174,7 @@
       padding: 8px 0;
       transition: color 0.2s;
     }
-    .btn-ghost:hover { color: var(--blue); }
+    .btn-ghost:hover { color: var(--white); }
 
     /* progress dots */
     .progress-dots {
@@ -192,16 +192,16 @@
       transition: background 0.3s;
     }
 
-    .dot.done     { background: var(--blue); }
-    .dot.current  { background: var(--blue); outline: 1px solid #555; outline-offset: 2px; }
+    .dot.done     { background: var(--white); }
+    .dot.current  { background: var(--white); outline: 1px solid #555; outline-offset: 2px; }
 
     /* ── DONE SCREEN ── */
-    #done-screen { background: var(--white); }
+    #done-screen { background: var(--blue); }
 
     .done-title {
       font-family: "hydrophilia-liquid", sans-serif;
       font-size: 1.8rem;
-      color: var(--blue);
+      color: var(--white);
       margin-bottom: 1rem;
       text-align: center;
     }
@@ -217,7 +217,7 @@
 
     /* ── COLLECTION SCREEN ── */
     #collection-screen {
-      background: var(--white);
+      background: var(--blue);
       overflow-y: auto;
       padding: 40px 20px;
       justify-content: flex-start;
@@ -233,7 +233,7 @@
     .collection-title {
       font-family: 'Hydrophilia Liquid', sans-serif;
       font-size: 2rem;
-      color: var(--blue);
+      color: var(--white);
       font-weight: normal;
     }
 
@@ -271,7 +271,7 @@
     .message-text {
       font-family: "Maison Neue Mono", monospace;
       font-size: 0.95rem;
-      color: var(--blue);
+      color: var(--white);
       line-height: 1.6;
       margin-bottom: 15px;
       word-wrap: break-word;
@@ -327,7 +327,7 @@
       position: absolute;
       top: 15px; right: 15px;
       background: transparent; border: none;
-      color: var(--blue);
+      color: var(--white);
       font-size: 1.8rem;
       cursor: pointer;
       transition: opacity 0.2s;
@@ -346,7 +346,7 @@
     .modal-message {
       font-family: "Maison Neue Mono", monospace;
       font-size: 1.1rem;
-      color: var(--blue);
+      color: var(--white);
       line-height: 1;
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -590,7 +590,7 @@ nextBtn.style.cursor = isEmpty ? 'not-allowed' : 'pointer';
         nextBtn.textContent = 'send all →';
         nextBtn.disabled = false;
         const errDiv = document.createElement('div');
-        errDiv.style.cssText = 'color:#ff6b6b;font-family:monospace;font-size:0.85rem;margin-top:16px;padding:12px;border:1px solid #ff6b6b;';
+        errDiv.style.cssText = 'color:#0D1333;font-family:monospace;font-size:0.85rem;margin-top:16px;padding:12px;border:1px solid #0D1333;';
         errDiv.textContent = 'Error: ' + e.message;
         document.querySelector('.write-container').appendChild(errDiv);
       }
@@ -642,7 +642,7 @@ const { data, error } = await db
       const num = String(session.writerNum).padStart(3, '0');
 
       card.innerHTML = `
-        <div style="font-family:'Maison Neue Mono',monospace;font-size:2rem;color:var(--blue);letter-spacing:0.05em;">#${num}</div>
+        <div style="font-family:'Maison Neue Mono',monospace;font-size:2rem;color:var(--white);letter-spacing:0.05em;">#${num}</div>
         <div class="message-meta" style="margin-top:16px;">
           <span>${getTimeAgo(session.timestamp)}</span>
         </div>
@@ -662,9 +662,9 @@ const { data, error } = await db
       entries.forEach((e, i) => {
         html += `
           <div style="padding:10px 0;${i > 0 ? 'border-top:1px solid var(--border-color);' : ''}">
-            <div style="font-size:0.68rem;color:#555;font-family:'Maison Neue Mono',monospace;letter-spacing:0.03em;margin-bottom:1px;">${escapeHtml(e.promptEn)}</div>
+            <div style="font-size:0.68rem;color:#0D1333;font-family:'Maison Neue Mono',monospace;letter-spacing:0.03em;margin-bottom:1px;">${escapeHtml(e.promptEn)}</div>
             <div style="font-family:'HsGultokki',sans-serif;font-size:0.85rem;color:#0D1333;margin-bottom:3px;">${escapeHtml(e.promptKo)}</div>
-            <div style="font-family:'Maison Neue Mono',monospace;font-size:0.92rem;color:${e.text ? 'var(--blue)' : '#444'};line-height:1.0;white-space:pre-wrap;">${e.text ? escapeHtml(e.text) : '—'}</div>
+            <div style="font-family:'Maison Neue Mono',monospace;font-size:0.92rem;color:${e.text ? 'var(--blue)' : '#0D1333'};line-height:1.0;white-space:pre-wrap;">${e.text ? escapeHtml(e.text) : '—'}</div>
           </div>
         `;
       });
