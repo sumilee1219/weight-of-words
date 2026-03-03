@@ -643,7 +643,7 @@ const { data, error } = await db
 
       card.innerHTML = `
         <div style="font-family:'Maison Neue Mono',monospace;font-size:2rem;color:var(--blue);letter-spacing:0.05em;">#${num}</div>
-        <div class="message-meta" style="margin-top:16px;">
+        <div class="message-meta" style="margin-top:5px;">
           <span>${getTimeAgo(session.timestamp)}</span>
         </div>
       `;
@@ -661,8 +661,8 @@ const { data, error } = await db
       let html = '';
       entries.forEach((e, i) => {
         html += `
-          <div style="padding:${i > 0 ? '5px' : '5px'} 0 5px 0;">
-            <div style="border:1px solid var(--border-color);padding:8px 12px;margin-bottom:10px;background:rgba(27,34,61,0.06);">
+          <div style="padding:${i > 0 ? '0px' : '0px'} 0 0px 0;">
+            <div style="border:1px solid var(--border-color);padding:5px 5px;margin-bottom:10px;background:rgba(27,34,61,0.06);">
               <div style="font-size:0.68rem;color:#212B45;font-family:'Maison Neue Mono',monospace;letter-spacing:0.03em;margin-bottom:2px;">${escapeHtml(e.promptEn)}</div>
               <div style="font-family:'HsGultokki',sans-serif;font-size:0.85rem;color:#212B45;">${escapeHtml(e.promptKo)}</div>
             </div>
