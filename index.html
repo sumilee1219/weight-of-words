@@ -634,8 +634,7 @@ const { data, error } = await db
     function createSessionCard(session, index, total) {
       const card = document.createElement('div');
       card.className = 'message-card';
-      const fading = Math.min(Math.floor(session.age / (4.3 * 86400000)) + 1, 7);
-      card.classList.add(`fading-${fading}`);
+
 
       // Use stored writerNum if available, otherwise fall back to position
       if (!session.writerNum) session.writerNum = total - index;
