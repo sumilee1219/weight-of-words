@@ -27,16 +27,16 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --white: #FFFFFF;
-      --blue: #131C4A;
-      --text-muted: #888888;
+      --white: #FFFEFC;
+      --blue: #0D1333;
+      --text-muted: #32395a;
       --border-color: #333333;
-      --card-bg: #111111;
+      --card-bg: #FFFEF2;
     }
 
     body {
       font-family: 'Hydrophilia Liquid', sans-serif;
-      background: var(--blue);
+      background: var(--white);
       overflow-x: hidden;
       cursor: default;
     }
@@ -67,7 +67,7 @@
       font-family: "hydrophilia-liquid", sans-serif;
       font-weight: 400;
       font-size: 2.5rem;
-      color: var(--white);
+      color: var(--blue);
       text-align: center;
       padding: 0 20px;
       margin-bottom: 3rem;
@@ -77,8 +77,8 @@
       font-family: 'Hydrophilia Liquid', sans-serif;
       font-size: 1rem;
       padding: 15px 35px;
-      background: var(--white);
-      color: var(--blue);
+      background: var(--blue);
+      color: var(--white);
       border: none;
       cursor: pointer;
       transition: opacity 0.2s;
@@ -95,7 +95,7 @@
     }
 
     /* ── WRITE SCREEN ── */
-    #write-screen { background: var(--blue); }
+    #write-screen { background: var(--white); }
 
     .write-container {
       max-width: 600px;
@@ -115,7 +115,7 @@
     .prompt-label {
       font-family: 'HsGultokki', sans-serif;
       font-size: 1.3rem;
-      color: var(--white);
+      color: var(--blue);
       margin-bottom: 22px;
       line-height: 1.5;
       display: flex;
@@ -145,7 +145,7 @@
       outline: none;
       resize: vertical;
       margin-bottom: 12px;
-      color: var(--white);
+      color: var(--blue);
     }
     .message-input::placeholder { color: var(--text-muted); opacity: 0.8; }
     .message-input:focus { border-color: #555; }
@@ -174,7 +174,7 @@
       padding: 8px 0;
       transition: color 0.2s;
     }
-    .btn-ghost:hover { color: var(--white); }
+    .btn-ghost:hover { color: var(--blue); }
 
     /* progress dots */
     .progress-dots {
@@ -192,16 +192,16 @@
       transition: background 0.3s;
     }
 
-    .dot.done     { background: var(--white); }
-    .dot.current  { background: var(--white); outline: 1px solid #555; outline-offset: 2px; }
+    .dot.done     { background: var(--blue); }
+    .dot.current  { background: var(--blue); outline: 1px solid #555; outline-offset: 2px; }
 
     /* ── DONE SCREEN ── */
-    #done-screen { background: var(--blue); }
+    #done-screen { background: var(--white); }
 
     .done-title {
       font-family: "hydrophilia-liquid", sans-serif;
       font-size: 1.8rem;
-      color: var(--white);
+      color: var(--blue);
       margin-bottom: 1rem;
       text-align: center;
     }
@@ -217,7 +217,7 @@
 
     /* ── COLLECTION SCREEN ── */
     #collection-screen {
-      background: var(--blue);
+      background: var(--white);
       overflow-y: auto;
       padding: 40px 20px;
       justify-content: flex-start;
@@ -233,7 +233,7 @@
     .collection-title {
       font-family: 'Hydrophilia Liquid', sans-serif;
       font-size: 2rem;
-      color: var(--white);
+      color: var(--blue);
       font-weight: normal;
     }
 
@@ -271,7 +271,7 @@
     .message-text {
       font-family: "Maison Neue Mono", monospace;
       font-size: 0.95rem;
-      color: var(--white);
+      color: var(--blue);
       line-height: 1.6;
       margin-bottom: 15px;
       word-wrap: break-word;
@@ -327,7 +327,7 @@
       position: absolute;
       top: 15px; right: 15px;
       background: transparent; border: none;
-      color: var(--white);
+      color: var(--blue);
       font-size: 1.8rem;
       cursor: pointer;
       transition: opacity 0.2s;
@@ -346,7 +346,7 @@
     .modal-message {
       font-family: "Maison Neue Mono", monospace;
       font-size: 1.1rem;
-      color: var(--white);
+      color: var(--blue);
       line-height: 1;
       white-space: pre-wrap;
       word-wrap: break-word;
